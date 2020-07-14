@@ -32,8 +32,6 @@ exports.SendProfitableMovieList = function (req, res) {
   //now we have to filter this list in order to make max profit
   //we have to select movies such that no two movies overlapp and the total movies will be maximum
 
-  serializeData = [];
-
   //   This sort function will sort movies based on end date
   //   If two movie end date have same month then it will compare the day . The movie which is having less day value will come before other
   //   If two movie have different month then month with lesser value/index will come before other movie
