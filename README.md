@@ -53,20 +53,6 @@ POST
   Content:
   `{ "movies": [ { "movie_name": String, "start_date": String, "end_date": String }], "profit": Integer,"message":String }`
 
-##### Error Response
-
-- Code: 422  
-  Content:
-  ```
-  {
-    "errors": [
-        {
-            "message": String
-        }
-    ]
-  }
-  ```
-
 ##### Sample Request
 
 ## Pass json in below format In case you want to test this api through postman.
