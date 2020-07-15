@@ -18,16 +18,19 @@ const months = [
 exports.SendProfitableMovieList = function (req, res) {
   //Assuming that we will receive a list of movies in form of JSON in below format
 
-  const movieList = {
-    data: [
-      { movie_name: 'Bala', start_date: '8 Jan', end_date: '28 Jan' },
-      { movie_name: 'Rock', start_date: '20 Jan', end_date: '30 Jan' },
-      { movie_name: 'PolicyMaker', start_date: '29 Jan', end_date: '16 Feb' },
-      { movie_name: 'Brave', start_date: '02 Feb', end_date: '14 Feb' },
-      { movie_name: 'Drive', start_date: '10 Feb', end_date: '18 Feb' },
-      { movie_name: 'Race', start_date: '15 Feb', end_date: '28 Feb' },
-    ],
-  };
+  //  dummy data
+  // const movieList = {
+  //   data: [
+  //     { movie_name: 'Bala', start_date: '8 Jan', end_date: '28 Jan' },
+  //     { movie_name: 'Rock', start_date: '20 Jan', end_date: '30 Jan' },
+  //     { movie_name: 'PolicyMaker', start_date: '29 Jan', end_date: '16 Feb' },
+  //     { movie_name: 'Brave', start_date: '02 Feb', end_date: '14 Feb' },
+  //     { movie_name: 'Drive', start_date: '10 Feb', end_date: '18 Feb' },
+  //     { movie_name: 'Race', start_date: '15 Feb', end_date: '28 Feb' },
+  //   ],
+  // };
+
+  const movieList = req.body;
 
   //   now we have to filter this list in order to make max profit
   //   we have to select movies such that no two movies overlapp and the total movies will be maximum
@@ -47,7 +50,7 @@ exports.SendProfitableMovieList = function (req, res) {
     movie2_day = parseInt(movie2_date[0]);
     movie2_month = months.indexOf(movie2_date[1].toLowerCase());
 
-    console.log(movie1_day, movie1_month, movie2_day, movie2_month);
+    // console.log(movie1_day, movie1_month, movie2_day, movie2_month);
 
     //   comparator logic - explained above
     return movie1_month == movie2_month
@@ -100,7 +103,7 @@ exports.SendProfitableMovieList = function (req, res) {
     //  in case month are same and last day > cur day then also dont push
   });
 
-  console.log('Profitable Movies ', profitable_movies);
+  // console.log('Profitable Movies ', profitable_movies);
 
   const response = {
     error: false,
