@@ -23,7 +23,7 @@ the duration of the money.
 - Open CLI and type npm install
 - Go to client directory run npm install
 - To Start server on Localhost: go to root directory and type npm start on CLI
-- Now your server is up on running : You can now make an POST call on http://localhost:5000/api/v1/ profitable-movie-list
+- Now your server is up on running : You can now make an POST call on http://localhost:5000/api/v1/profitable-movie-list
 
 ##### LIVE URL
 
