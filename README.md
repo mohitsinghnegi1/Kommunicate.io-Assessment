@@ -13,20 +13,109 @@ the duration of the money.
 
 ## _**PLEASE READ THIS TO SET UP THIS PROJECT**_
 
-### _**IMPORTANT NOTES**_ -
+### _**INSTRUCTIONS TO START THIS PROJECT ON LOCALHOST**_ -
 
-This project does not have a mongoDB connection setup. Setup the connection based on the environments below.
+## Setup/Installations
 
-- local development: create a config file (make sure to name it config.js) in the config folder, which exports your db.uri connection. An example is provided, config/config.example.js. This file will be ignored by git so your db credentials will be kept safe when the app is deployed.
-- production: Since the config file is not pushed when you deploy your app, you must specifiy your db uri in heorku. Set the uri in heroku as specified in [this](https://devcenter.heroku.com/articles/config-vars) resource. Make sure you name the environement variable "DB_URI".
+- Install Node js(https://nodejs.org/en/)
+- Clone this Repository
+- Go to root directory
+- Open CLI and type npm install
+- Go to client directory run npm install
+- To Start server on Localhost: go to root directory and type npm start on CLI
+- Now your server is up on running : You can now make an POST call on http://localhost:5000/api/v1/ profitable-movie-list
 
-This project contains an example project board meant to showcase how one can be used. The issues posted to it are not real issues.
+##### LIVE URL
+
+- Base url
+  `http://kommunicate-io-assessment.herokuapp.com`
+
+* Endpoint
+  `/api/v1/profitable-movie-list`
+
+##### Method
+
+POST
+
+##### Data Params
+
+    data = {
+    "data" : [{
+    "movie_name" : String,
+    "start_date" : String,
+    "end_date" : String
+    }]
+    }
+
+##### Success Response
+
+- Code: 200  
+  Content:
+  `{ "movies": [ { "movie_name": String, "start_date": String, "end_date": String }], "profit": Integer,"message":String }`
+
+##### Error Response
+
+- Code: 422  
+  Content:
+  ```
+  {
+    "errors": [
+        {
+            "message": String
+        }
+    ]
+  }
+  ```
+
+##### Sample Request
+
+## Pass json in below format In case you want to test this api through postman.
+
+```javascript
+{
+    "data": [
+      { "movie_name": "Bala", "start_date": "8 Jan", "end_date": "28 Jan" },
+      { "movie_name": "Rock", "start_date": "20 Jan", "end_date": "30 Jan" },
+      { "movie_name": "PolicyMaker", "start_date": "29 Jan", "end_date": "16 Feb" },
+      { "movie_name": "Brave", "start_date": "02 Feb", "end_date": "14 Feb" },
+      { "movie_name": "Drive", "start_date": "10 Feb", "end_date": "18 Feb" },
+      { "movie_name": "Race", "start_date": "15 Feb", "end_date": "28 Feb" }
+    ]
+  }
+
+
+```
+
+##### Sample Response
+
+```javascript
+{
+    "error": false,
+    "data": [
+        {
+            "movie_name": "Bala",
+            "start_date": "8 Jan",
+            "end_date": "28 Jan"
+        },
+        {
+            "movie_name": "Brave",
+            "start_date": "02 Feb",
+            "end_date": "14 Feb"
+        },
+        {
+            "movie_name": "Race",
+            "start_date": "15 Feb",
+            "end_date": "28 Feb"
+        }
+    ],
+    "profit": 3,
+    "message": "Max Profit : 3 Crore"
+}
+```
 
 ## Getting Started
 
-This repository aims to assist you in beginning work on a MERN stack application for heroku deployment with a solid file structure as a foundation. To get started make a copy of this template repo for your project teams by clicking the green "Use this template" button above.
-
-Since this project will hold both the client application and the server application there will be node modules in two different places. First run `npm install` from the root. After this you will run `npm run-script install-all` from the root. From now on run this command anytime you want to install all modules again. This is a script we have defined in package.json. Alternatively your group may choose to simplify this process by using yarn workspaces as specified [here](https://yarnpkg.com/lang/en/docs/workspaces/).
+This project will hold both the client application and the server application there will be node modules in two different places. First run `npm install` from the root. After this you will run `npm run-script install-all` from the root. From now on run this command anytime you want to install all modules again. This is a script we have defined in package.json. Alternatively your group may choose to simplify this process by using yarn workspaces as specified [here](https://yarnpkg.com/lang/en/docs/workspaces/).
 
 This app can be deployed directly to heroku since there is a script defined in package.json which will automatically handle building and deploying the app. For more information on deploying to heroku reference the extra resources at the bottom of this file.
 
