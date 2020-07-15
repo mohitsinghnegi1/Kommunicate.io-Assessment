@@ -55,7 +55,7 @@ POST
 
 ##### Sample Request
 
-## Pass json in below format In case you want to test this api through postman.
+## BODY
 
 ```javascript
 {
