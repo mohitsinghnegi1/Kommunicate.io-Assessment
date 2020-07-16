@@ -1,6 +1,6 @@
 # Kommunicate.io-Assessment
 
-Design a REST API where the actor can submit the data containing the list of movies with movie name, start date and end date and the API should return the total amount that he can make along with the final list of movies to select.
+-Design a REST API where the actor can submit the data containing the list of movies with movie name, start date and end date and the API should return the total amount that he can make along with the final list of movies to select.
 
 ## _**A movie actor wants to make the max. money by picking the right movies in a given year.**_
 
@@ -17,13 +17,14 @@ the duration of the money.
 
 ## Setup/Installations
 
-- Install Node js(https://nodejs.org/en/)
-- Clone this Repository
+- Install Node js (https://nodejs.org/en/)
+- clone this Repository
 - Go to root directory
-- Open CLI and type npm install
+- open CLI and type ```npm install```
 - Go to client directory run npm install
-- To Start server on Localhost: go to root directory and type npm start on CLI
-- Now your server is up on running : You can now make an POST call on http://localhost:5000/api/v1/profitable-movie-list
+- To start server on Localhost: go to root directory and type ```npm start``` on CLI
+- Now your server is up on running : 
+- You can now make a POST call on http://localhost:5000/api/v1/profitable-movie-list
 
 ##### LIVE URL
 
@@ -99,7 +100,7 @@ POST
 }
 ```
 
-## Getting Started
+## Project Structure & deployment
 
 This project will hold both the client application and the server application there will be node modules in two different places. First run `npm install` from the root. After this you will run `npm run-script install-all` from the root. From now on run this command anytime you want to install all modules again. This is a script we have defined in package.json. Alternatively your group may choose to simplify this process by using yarn workspaces as specified [here](https://yarnpkg.com/lang/en/docs/workspaces/).
 
